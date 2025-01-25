@@ -1,0 +1,47 @@
+meta:
+  engine: 4.1.0
+units:
+  ky: u
+  kx: u 
+  py: ky + 2
+  px: kx + 2
+points:
+  zones:
+    matrix:
+      key:
+        padding: 1ky
+        spread: 1kx
+      anchor:
+      columns: 
+        pinky:
+        ring:
+        middle:
+        index:
+        inner:
+        outer:
+        mostouter:
+          rows:
+            middle:
+              skip: true
+            top:
+              skip: true
+      rows:
+        bottom:
+        home:
+        top:
+        middle:
+    thumbfan:
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [0, -19]
+      columns:
+        near:
+        home:
+          key.spread: -19
+        far:
+          key.spread: -19
+          key.origin: [-9.5, -9]
+        morefar:
+          key:
+            width: 36
+          key.spread: 66
