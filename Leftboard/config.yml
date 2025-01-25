@@ -1,0 +1,250 @@
+meta:
+  engine: 4.1.0
+units:
+  ky: u
+  kx: u 
+  py: ky + 4
+  px: kx + 4
+  dpx: kx + 8
+  dpy: ky + 8
+  screwSize: 1.5
+  standoffSize: 2.5
+points:
+  zones:
+    matrix:
+      key:
+        padding: 1ky
+        spread: 1kx
+      anchor:
+        shift: [150, -150]
+      columns: 
+        pinky:
+        ring:
+        middle:
+        index:
+        inner:
+        outer:
+        mostouter:
+          rows:
+            middle:
+              skip: true
+            top:
+              skip: true
+      rows:
+        bottom:
+        home:
+        middle:
+        top:  
+    thumbfan:
+      anchor:
+        ref: matrix_middle_bottom
+        shift: [0, -ky]
+      columns:
+        near:
+        home:
+        far:
+        morefar:
+          key:
+            width: 2kx-2
+          key.spread: kx+9
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [px,py]
+  keys:
+    - what: rectangle
+      where: true
+      size: [kx-0.5,ky-0.5]
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_bottom
+          shift: [-0.5px,-0.5py]
+        - ref: matrix_middle_bottom
+          shift: [-0.5px,-0.5py]
+        - ref: thumbfan_near
+          shift: [-0.5px,-0.5py]
+        - ref: thumbfan_morefar
+          shift: [.935px,-0.5py]
+        - ref: matrix_mostouter_bottom
+          shift: [0.5px,0]
+        - ref: matrix_outer_top
+          shift: [1.3261px,0.5py]
+        - ref: matrix_pinky_top
+          shift: [-0.5px,0.5py]
+      fillet: 1
+  xlBoard:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_bottom
+          shift: [-0.5dpx,-0.5dpy]
+        - ref: matrix_middle_bottom
+          shift: [-0.5dpx,-0.5dpy]
+        - ref: thumbfan_near
+          shift: [-0.5dpx,-0.5dpy]
+        - ref: thumbfan_morefar
+          shift: [.87dpx,-0.5dpy]
+        - ref: matrix_mostouter_bottom
+          shift: [0.5dpx,0]
+        - ref: matrix_outer_top
+          shift: [1.2dpx,0.5dpy]
+        - ref: matrix_pinky_top
+          shift: [-0.5dpx,0.5dpy]
+      fillet: 1
+  combo:
+    - name: board
+    - operation: subtract
+      name: keys
+  mounting:
+    - what: circle
+      radius: screwSize
+      where:
+          ref: matrix_pinky_top
+          shift: [0.5kx,-0.5ky]
+    - what: circle
+      radius: screwSize
+      where:
+          ref: matrix_pinky_bottom
+          shift: [0.5kx,0.5ky]
+    - what: circle
+      radius: screwSize
+      where:
+          ref: matrix_outer_top
+          shift: [-0.5kx,-0.5ky]
+    - what: circle
+      radius: screwSize
+      where:
+          ref: matrix_outer_bottom
+          shift: [-0.5kx,-0.5ky]
+  standoff:
+    - what: circle
+      radius: standoffSize
+      where:
+          ref: matrix_pinky_top
+          shift: [0.5kx,-0.5ky]
+    - what: circle
+      radius: standoffSize
+      where:
+          ref: matrix_pinky_bottom
+          shift: [0.5kx,0.5ky]
+    - what: circle
+      radius: standoffSize
+      where:
+          ref: matrix_outer_top
+          shift: [-0.5kx,-0.5ky]
+    - what: circle
+      radius: standoffSize
+      where:
+          ref: matrix_outer_bottom
+          shift: [-0.5kx,-0.5ky]
+pcbs:
+  nitsud:
+    outlines:
+      main:
+        outline: board
+    footprints:
+      mx_hotswap:
+        what: mx
+        where: true
+        params:
+          keycaps: true
+          reverse: false
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0,-5]
+      promicro:
+        what: promicro
+        params:
+          orientation: "down"
+        where:
+          ref: matrix_outer_top
+          shift: [20,-8]
+          rotate: -90
+      oled:
+        what: oled
+        params:
+          side: "F"
+          SDA: P2
+          SCL: P3
+        where:
+          ref: matrix_outer_middle
+          shift: [14,-8]
+          rotate: 90
+      reset:
+        what: button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref: matrix_outer_top
+          shift: [20,0]
+          rotate: -90
+      holeTopLeft:
+        what: ceoloide/mounting_hole_plated
+        where:
+          ref: matrix_pinky_top
+          shift: [0.5kx,-0.5ky]
+      holeBotLeft:
+        what: ceoloide/mounting_hole_plated
+        where:
+          ref: matrix_pinky_bottom
+          shift: [0.5kx,0.5ky]
+      holeTopRight:
+        what: ceoloide/mounting_hole_plated
+        where:
+          ref: matrix_outer_top
+          shift: [-0.5kx,-0.5ky]
+      holeBotRight:
+        what: ceoloide/mounting_hole_plated
+        where:
+          ref: matrix_outer_bottom
+          shift: [-0.5kx,-0.5ky]
+cases:
+  bottom:
+    - name: board
+      extrude: 1
+  xlBottom:
+    - name: xlBoard
+      extrude: 1
+  _outerWall:
+    - name: xlBoard
+      extrude: 4
+  _innerWall:
+    - name: xlBoard
+      extrude: 4
+  wall:
+    - what: case
+      name: _outerWall
+      operation: add
+    - what: case
+      name: _innerWall
+      operation: subtract
+  _holes:
+    - name: mounting
+      extrude: 4
+  _standoffs:
+    - name: standoff
+      extrude: 4
+  case:
+    - what: case
+      name: _standoffs
+      operation: add
+    - what: case
+      name: _holes
+      operation: subtract
+    - what: case
+      name: xlBottom
+      operation: add
+    - what: case
+      name: wall
+      operation: add
