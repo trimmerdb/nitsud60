@@ -3,8 +3,8 @@ meta:
 units:
   ky: u
   kx: u 
-  py: ky + 2
-  px: kx + 2
+  py: ky + 4
+  px: kx + 4
 points:
   zones:
     matrix:
@@ -28,8 +28,8 @@ points:
       rows:
         bottom:
         home:
-        top:
         middle:
+        top:  
     thumbfan:
       anchor:
         ref: matrix_inner_bottom
@@ -58,5 +58,53 @@ outlines:
     - what: polygon
       operation: stack
       points:
-        - ref: 
-    
+        - ref: matrix_pinky_bottom
+          shift: [-0.5px,-0.5py]
+        - ref: matrix_middle_bottom
+          shift: [-0.5px,-0.5py]
+        - ref: thumbfan_far
+          shift: [-0.5px,-0.5py]
+        - ref: thumbfan_morefar
+          shift: [21.5,-0.5py]
+        - ref: matrix_mostouter_bottom
+          shift: [0.5px,0]
+        - ref: matrix_outer_top
+          shift: [30.5,0.5py]
+        - ref: matrix_pinky_top
+          shift: [-0.5px,0.5py]
+      fillet: 1
+  combo:
+    - name: board
+    - operation: subtract
+      name: keys
+pcbs:
+  nitsud:
+    outlines:
+      main:
+        outline: board
+    footprints:
+      mx_hotswap:
+        what: mx
+        where: true
+        params:
+          keycaps: true
+          reverse: false
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0,-5]
+      promicro:
+        what: promicro
+        params:
+          orientation: "down"
+        where:
+          ref: matrix_outer_top
+          shift: [19,0]
+          rotate: -90
+        
