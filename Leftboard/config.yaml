@@ -2,7 +2,7 @@ meta:
   engine: 4.1.0
 units:
   ky: u
-  kx: u 
+  kx: u
   py: ky + 4
   px: kx + 4
   dpx: kx + 8
@@ -17,7 +17,7 @@ points:
         spread: 1kx
       anchor:
         shift: [150, -150]
-      columns: 
+      columns:
         pinky:
         ring:
         middle:
@@ -34,7 +34,7 @@ points:
         bottom:
         home:
         middle:
-        top:  
+        top:
     thumbfan:
       anchor:
         ref: matrix_middle_bottom
@@ -155,7 +155,7 @@ pcbs:
           from: "{{column_net}}"
           to: "{{colrow}}"
       diode:
-        what: diode
+        what: ceoloide/diode_tht_sod123
         where: true
         params:
           from: "{{colrow}}"
