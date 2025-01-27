@@ -1225,7 +1225,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 226 169 0)
+      (at 188 169 0)
 
       
       (fp_text reference "S27" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1303,7 +1303,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 188 169 0)
+      (at 226 169 0)
 
       
       (fp_text reference "S29" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2397,7 +2397,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 226 174 0)
+        (at 188 174 0)
 
         
         (fp_text reference "D27" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2475,7 +2475,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 188 174 0)
+        (at 226 174 0)
 
         
         (fp_text reference "D29" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2679,17 +2679,91 @@
     )
     
     
+
+  (footprint "ceoloide:mounting_hole_plated"
+    (layer "F.Cu")
+    (at 159.5 102.5 0)
+    (property "Reference" "H1"
+      (at 0 3 0)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    
+    (pad "" thru_hole circle (at 0 0 0) (size 3.8000000000000003 3.8000000000000003) (drill 2.2) (layers "*.Cu" "*.Mask"))
+    
+    (fp_circle (center 0 0) (end -2.1500000000000004 0) (layer "F.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    (fp_circle (center 0 0) (end -2.1500000000000004 0) (layer "B.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    
+  )
+    
+
+  (footprint "ceoloide:mounting_hole_plated"
+    (layer "F.Cu")
+    (at 159.5 140.5 0)
+    (property "Reference" "H2"
+      (at 0 3 0)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    
+    (pad "" thru_hole circle (at 0 0 0) (size 3.8000000000000003 3.8000000000000003) (drill 2.2) (layers "*.Cu" "*.Mask"))
+    
+    (fp_circle (center 0 0) (end -2.1500000000000004 0) (layer "F.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    (fp_circle (center 0 0) (end -2.1500000000000004 0) (layer "B.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    
+  )
+    
+
+  (footprint "ceoloide:mounting_hole_plated"
+    (layer "F.Cu")
+    (at 235.5 102.5 0)
+    (property "Reference" "H3"
+      (at 0 3 0)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    
+    (pad "" thru_hole circle (at 0 0 0) (size 3.8000000000000003 3.8000000000000003) (drill 2.2) (layers "*.Cu" "*.Mask"))
+    
+    (fp_circle (center 0 0) (end -2.1500000000000004 0) (layer "F.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    (fp_circle (center 0 0) (end -2.1500000000000004 0) (layer "B.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    
+  )
+    
+
+  (footprint "ceoloide:mounting_hole_plated"
+    (layer "F.Cu")
+    (at 235.5 159.5 0)
+    (property "Reference" "H4"
+      (at 0 3 0)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    
+    (pad "" thru_hole circle (at 0 0 0) (size 3.8000000000000003 3.8000000000000003) (drill 2.2) (layers "*.Cu" "*.Mask"))
+    
+    (fp_circle (center 0 0) (end -2.1500000000000004 0) (layer "F.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    (fp_circle (center 0 0) (end -2.1500000000000004 0) (layer "B.CrtYd") (stroke (width 0.05) (type solid)) (fill none))
+    
+  )
+    
   (gr_line (start 138.5 82.5) (end 138.5 160.5) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 139.5 161.5) (end 175.5 161.5) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 176.5 162.5) (end 176.5 179.5) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 177.5 180.5) (end 274.5 180.5) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 275.5 179.5) (end 275.5 82.5) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 274.5 81.5) (end 139.5 81.5) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 177.5 180.5) (end 274.5048360387049 180.5) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 275.5048360387049 179.49983610003255) (end 275.5000000007179 150.00000437907875) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 275.5000000007179 149.99983608722687) (end 275.5002956204186 82.50000441074371) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 274.5002956204186 81.5) (end 139.5 81.5) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_arc (start 139.5 160.5) (end 138.5 160.5) (angle -90) (layer Edge.Cuts) (width 0.15))
 (gr_arc (start 175.5 162.5) (end 176.5 162.5) (angle -90) (layer Edge.Cuts) (width 0.15))
 (gr_arc (start 177.5 179.5) (end 176.5 179.5) (angle -90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 274.5 179.5) (end 274.5 180.5) (angle -90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 274.5 82.5) (end 275.5 82.5) (angle -90) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 274.5048360387049 179.5) (end 274.5048360387049 180.5) (angle -90.00939077631294) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 276.50000000071793 149.99984047934413) (end 275.50000000071793 149.99983607934413) (angle -0.00964241275497102) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 274.5002956204186 82.50000000745058) (end 275.5002956204186 82.50000440745058) (angle -90.00025229011248) (layer Edge.Cuts) (width 0.15))
 (gr_arc (start 139.5 82.5) (end 139.5 81.5) (angle -90) (layer Edge.Cuts) (width 0.15))
 
 )
