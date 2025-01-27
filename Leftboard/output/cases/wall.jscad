@@ -1,6 +1,12 @@
-function xlBoard_extrude_4_outline_fn(){
+function xlBoard_extrude_5_6_outline_fn(){
     return new CSG.Path2D([[136.5,-80.5],[136.5,-162.5]]).appendArc([137.5,-163.5],{"radius":1,"clockwise":false,"large":false}).appendPoint([173.5,-163.5]).appendArc([174.5,-164.5],{"radius":1,"clockwise":true,"large":false}).appendPoint([174.5,-181.5]).appendArc([175.5,-182.5],{"radius":1,"clockwise":false,"large":false}).appendPoint([276.4903076,-182.5]).appendArc([277.4903076,-181.5003077],{"radius":1,"clockwise":false,"large":false}).appendPoint([277.4999997,-150.0008391]).appendArc([277.4999987,-149.999113],{"radius":1,"clockwise":false,"large":false}).appendPoint([277.4014164,-80.4985816]).appendArc([276.4014174,-79.5],{"radius":1,"clockwise":false,"large":false}).appendPoint([137.5,-79.5]).appendArc([136.5,-80.5],{"radius":1,"clockwise":false,"large":false}).close().innerToCAG()
-.extrude({ offset: [0, 0, 4] });
+.extrude({ offset: [0, 0, 5.6] });
+}
+
+
+function board_extrude_5_6_outline_fn(){
+    return new CSG.Path2D([[138.5,-82.5],[138.5,-160.5]]).appendArc([139.5,-161.5],{"radius":1,"clockwise":false,"large":false}).appendPoint([175.5,-161.5]).appendArc([176.5,-162.5],{"radius":1,"clockwise":true,"large":false}).appendPoint([176.5,-179.5]).appendArc([177.5,-180.5],{"radius":1,"clockwise":false,"large":false}).appendPoint([274.504836,-180.5]).appendArc([275.504836,-179.4998361],{"radius":1,"clockwise":false,"large":false}).appendPoint([275.5,-150.0000044]).appendPoint([275.5002956,-82.5000044]).appendArc([274.5002956,-81.5],{"radius":1,"clockwise":false,"large":false}).appendPoint([139.5,-81.5]).appendArc([138.5,-82.5],{"radius":1,"clockwise":false,"large":false}).close().innerToCAG()
+.extrude({ offset: [0, 0, 5.6] });
 }
 
 
@@ -10,7 +16,7 @@ function xlBoard_extrude_4_outline_fn(){
                     
 
                 // creating part 0 of case _outerWall
-                let _outerWall__part_0 = xlBoard_extrude_4_outline_fn();
+                let _outerWall__part_0 = xlBoard_extrude_5_6_outline_fn();
 
                 // make sure that rotations are relative
                 let _outerWall__part_0_bounds = _outerWall__part_0.getBounds();
@@ -33,7 +39,7 @@ function xlBoard_extrude_4_outline_fn(){
                     
 
                 // creating part 0 of case _innerWall
-                let _innerWall__part_0 = xlBoard_extrude_4_outline_fn();
+                let _innerWall__part_0 = board_extrude_5_6_outline_fn();
 
                 // make sure that rotations are relative
                 let _innerWall__part_0_bounds = _innerWall__part_0.getBounds();
