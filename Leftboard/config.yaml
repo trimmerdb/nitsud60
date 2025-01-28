@@ -159,7 +159,16 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
+          shift: [0.4kx,-4]
+          rotate: 90
+      rgb:
+        what: ceoloide/led_sk6812mini-e
+        where: true
+        adjust:
           shift: [0,-5]
+        params:
+          P2: P10
+          P4: P11
       promicro:
         what: promicro
         params:
@@ -178,14 +187,19 @@ pcbs:
           ref: matrix_outer_middle
           shift: [14,-8]
           rotate: 90
+      trrsJack:
+        what: ceoloide/trrs_pj320a
+        where:
+          ref: matrix_outer_top
+          shift: [20,0.5ky]
       reset:
-        what: button
+        what: ceoloide/reset_switch_tht_top
         params:
           from: GND
           to: RST
         where:
-          ref: matrix_outer_top
-          shift: [20,0]
+          ref: matrix_mostouter_home
+          shift: [.5kx,.5ky]
           rotate: -90
       holeTopLeft:
         what: ceoloide/mounting_hole_plated
