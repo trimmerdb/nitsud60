@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.762,
-          "height": 1.524,
-          "width": 1.524
+          "drill": 0.0,
+          "height": 1.2,
+          "width": 0.9
         },
         "silk_line_width": 0.12,
         "silk_text_italic": false,
@@ -392,14 +392,6 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P10"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P11"
-      },
-      {
-        "netclass": "Default",
         "pattern": "RAW"
       },
       {
@@ -433,6 +425,10 @@
       {
         "netclass": "Default",
         "pattern": "P16"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P10"
       },
       {
         "netclass": "Default",

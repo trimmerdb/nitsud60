@@ -167,8 +167,10 @@ pcbs:
         adjust:
           shift: [0,-5]
         params:
-          P2: P10
-          P4: P11
+          P1: VCC
+          P2: "{{key.led_next}}"
+          P3: GND
+          P4: "{{key.led_prev}}"
       promicro:
         what: promicro
         params:
