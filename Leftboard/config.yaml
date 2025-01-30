@@ -56,6 +56,10 @@ outlines:
     - what: rectangle
       where: true
       size: [kx-0.5,ky-0.5]
+  keysMX:
+    - what: rectangle
+      where: true
+      size: [14,14]
   board:
     - what: polygon
       operation: stack
@@ -227,6 +231,12 @@ cases:
   bottom:
     - name: board
       extrude: 1
+  plate:
+    - name: board
+      extrude: 1.5
+  _key:
+    - name: keysMX
+      extrude: 1.5
   xlBottom:
     - name: xlBoard
       extrude: 1
@@ -262,3 +272,10 @@ cases:
     - what: case
       name: wall
       operation: add
+  switchPlate:
+    - what: case
+      name: bottom
+      operation: add
+    - what: case
+      name: _key
+      operation: subtract
