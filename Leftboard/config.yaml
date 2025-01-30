@@ -60,6 +60,27 @@ outlines:
     - what: rectangle
       where: true
       size: [14,14]
+  plate:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_bottom
+          shift: [-0.5px,-0.5py]
+        - ref: matrix_middle_bottom
+          shift: [-0.5px,-0.5py]
+        - ref: thumbfan_near
+          shift: [-0.5px,-0.5py]
+        - ref: thumbfan_morefar
+          shift: [.935px,-0.5py]
+        - ref: matrix_mostouter_home
+          shift: [0.5px, 0.5py]
+        - ref: matrix_outer_home
+          shift: [0.5px, 0.5py]
+        - ref: matrix_outer_top
+          shift: [0.5px,0.5py]
+        - ref: matrix_pinky_top
+          shift: [-0.5px,0.5py]
+      fillet: 1
   board:
     - what: polygon
       operation: stack
@@ -231,8 +252,8 @@ cases:
   bottom:
     - name: board
       extrude: 1
-  plate:
-    - name: board
+  plated:
+    - name: plate
       extrude: 1.5
   _key:
     - name: keysMX
@@ -274,7 +295,7 @@ cases:
       operation: add
   switchPlate:
     - what: case
-      name: bottom
+      name: plated
       operation: add
     - what: case
       name: _key
